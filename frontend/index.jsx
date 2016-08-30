@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { requestBenches, receiveBenches } from './actions/bench_actions';
-import BenchIndexContainer from './components/bench_index_container';
+import SearchContainer from './components/search_container';
 import { Provider } from 'react-redux';
 
 const Root = ({store}) => (
   <Provider store={store}>
-    <BenchIndexContainer />
+    <SearchContainer />
   </Provider>
 );
 
