@@ -1,8 +1,11 @@
+/* global google */
+
 import React from 'react';
+import MarkerManager from '../util/marker_manager';
 
 class BenchMap extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   componentDidMount() {
@@ -16,6 +19,12 @@ class BenchMap extends React.Component {
 
     // wrap mapDOMNode in a Google Map
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.updateMarkers(this.props.benches);
+  }
+
+  componentDidUpdate() {
+    this.MarkerManager.updateMarkers(this.props.benches);
   }
 
   render() {

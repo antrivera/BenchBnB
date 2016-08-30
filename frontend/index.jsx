@@ -12,7 +12,7 @@ const Root = ({store}) => (
 );
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
+  const store = window.Store = configureStore();
   window.requestBenches = requestBenches;
   window.receiveBenches = receiveBenches;
   const root = document.getElementById('root');
