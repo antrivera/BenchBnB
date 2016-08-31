@@ -1,7 +1,7 @@
 import { BenchConstants } from '../actions/bench_actions';
 import { merge } from 'lodash';
 
-const BenchesReducer = (state = {}, action) => {
+const BenchesReducer = (state = [], action) => {
   switch (action.type) {
     case BenchConstants.RECEIVE_BENCHES:
       return action.benches;
